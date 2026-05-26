@@ -92,7 +92,7 @@ check_compile_deps() {
     echo -e "${yellow}🔍 批量检查依赖安装状态...${nc}"
     local missing_deps=()
     for dep in "${required_deps[@]}"; do
-        if ! dpkg -l "${dep}" 2>/dev/null | grep -q "^ii"; then
+        if ! dpkg -l "${dep}" 2>1 | grep -q "^ii"; then
             missing_deps+=("${dep}")
         fi
     done
