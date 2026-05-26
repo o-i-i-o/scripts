@@ -11,8 +11,8 @@ nc='\033[0m'
 # ====================== 核心配置（统一路径命名，避免混乱） ======================
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 # 版本配置
-NGINX_VERSION="1.29.4"
-OPENSSL_VERSION="3.6.0"
+NGINX_VERSION="1.31.1"
+OPENSSL_VERSION="4.0"
 
 # 下载链接
 NGINX_DOWNLOAD_URL="https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz"
@@ -147,7 +147,7 @@ date=$(date +%Y%m%d)
 --error-log-path=stderr \
 --lock-path=/var/lock/nginx.lock \
 --pid-path=/run/nginx.pid \
---modules-path=/usr/lib/nginx/modules \
+--modules-path=/usr/share/nginx/modules \
 --http-client-body-temp-path=/var/lib/nginx/body \
 --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
 --http-proxy-temp-path=/var/lib/nginx/proxy \
