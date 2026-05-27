@@ -198,6 +198,9 @@ echo -e "${green}✅ 安装到打包目录${nc}"
 cp -uvpfr "$DEB_COMMON/"* "$DEB_WORK/"
 echo -e "${green}✅ 基础文件复制完成！${nc}"
 
+#更新版本号
+sed -i 's/^Version:.*/Version: '"$NGINX_VERSION"'/' ../nginx-base/DEBIAN/control
+
 #文件校验
 chmod +x "$DEB_WORK"/make-md5sums
 cd "$DEB_WORK"/  && ./make-md5sums
