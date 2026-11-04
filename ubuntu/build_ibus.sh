@@ -17,7 +17,6 @@ sudo apt install -y \
     gtk-doc-tools \
     libdconf-dev \
     systemd-dev \
-    libdbus-glib-1-3 \
     libdbusmenu-gtk3-dev \
     libnotify-dev \
     unicode-cldr-core \
